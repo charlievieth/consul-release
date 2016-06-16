@@ -39,7 +39,7 @@ type ConsulConfigPorts struct {
 	DNS int `json:"dns"`
 }
 
-func GenerateConfiguration(config Config) ConsulConfig {
+func GenerateConfiguration(config Config, configDir string) ConsulConfig {
 	lan := config.Consul.Agent.Servers.LAN
 	if lan == nil {
 		lan = []string{}
